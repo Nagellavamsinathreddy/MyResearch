@@ -1,24 +1,57 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: green;
+    color: rgb(230, 25, 25);
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    position: relative;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Behind the content */
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire background */
 }
 
 .container {
-text-align: center;
+    text-align: center;
+    z-index: 10;
 }
 
 h1 {
-font-size: 5rem;
+    font-size: 5rem;
+    letter-spacing: 5px;
 }
 
 p {
-font-size: 2rem;
+    font-size: 2rem;
+    margin-top: -10px;
+}
+
+.binary {
+    position: absolute;
+    top: -20px;
+    color: green;
+    font-size: 1rem;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
